@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦆 Le Royaume du Canard 🦆</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🦆 LE ROYAUME DU CANARD 🦆</h1>
+    <p>Depuis 1998, leader mondial du canard inutile.</p>
+</header>
+
+<marquee scrollamount="8">
+    🚨 ALERTE CANARD 🚨 Un canard géant a été aperçu dans le secteur 42 🚨
+</marquee>
+
+<div class="container">
+
+    <div class="card">
+        <div class="duck">🦆</div>
+        <h2>Notre Chef Suprême</h2>
+        <p>
+            Voici Gérard le Canard Cosmique.
+            Il voyage entre les galaxies à la recherche
+            de miettes de pain interstellaires.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Statistiques officielles</h2>
+        <p>Canards recensés : <span class="counter">42 133</span></p>
+        <p>Pains mangés : <span class="counter">9 882 741</span></p>
+        <p>Missions spatiales : <span class="counter">127</span></p>
+    </div>
+
+    <div class="card">
+        <h2>🏆 Classement des Canards</h2>
+        <ol style="text-align:left; display:inline-block;">
+            <li>Gérard le Cosmique 🚀</li>
+            <li>Jean-Canard le Destructeur 🌋</li>
+            <li>Coin-Coin Prime ⭐</li>
+            <li>L'Empereur Donald XVI 👑</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>🖼 Galerie</h2>
+        <div class="gallery">
+            <div>🦆</div>
+            <div>🐥</div>
+            <div>🦆</div>
+            <div>🐤</div>
+            <div>🦆</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="blink">Recevoir l'approbation du Canard</h2>
+
+        <button onclick="approbation()">
+            Cliquer ici
+        </button>
+
+        <p id="msg"></p>
+    </div>
+
+    <div class="card">
+        <h2>📜 Les Lois du Canard</h2>
+        <ul style="text-align:left; display:inline-block;">
+            <li>Article 1 : Le canard a toujours raison.</li>
+            <li>Article 2 : Si le canard a tort, voir article 1.</li>
+            <li>Article 3 : Le pain est sacré.</li>
+            <li>Article 4 : Coin coin.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Royaume du Canard |
+    Site certifié 100% canard 🦆
+</footer>
+
+<script>
+    const messages = [
+        "🦆 Le Conseil des Canards vous accepte.",
+        "🚀 Gérard vous offre une miette cosmique.",
+        "🥖 Vous recevez +10 pain.",
+        "⭐ Votre niveau de canard est maintenant de 9000.",
+        "🦆 Coin coin approuvé."
+    ];
+
+    function approbation(){
+        const random =
+            messages[Math.floor(Math.random()*messages.length)];
+
+        document.getElementById("msg").innerText = random;
+    }
+</script>
+
+</body>
+</html>
