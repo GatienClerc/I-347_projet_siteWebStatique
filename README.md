@@ -34,7 +34,7 @@ docker run --rm -v web_data:/destination -v "%cd%\web:/source:ro" alpine sh -c "
 
 Ouvrez votre navigateur et accédez à l'adresse suivante :
 
-http://localhost:80
+http://localhost
 
 Si l'installation s'est déroulée correctement, le site web devrait s'afficher.
 
