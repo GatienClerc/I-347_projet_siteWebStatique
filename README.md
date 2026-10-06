@@ -1,5 +1,39 @@
 # I-347_projet_siteWebStatique
 
+## Conception
+
+### Architecture du projet
+
+```text
+root
+├── web/
+│   ├── index.html          # Structure et contenu de la page web
+│   └── style.css           # Mise en forme et présentation du site
+└── docker-compose.yml      # Configuration des services Docker
+```
+
+### Fonctionnement
+
+Le site est déployé dans un environnement Docker afin de disposer d'un environnement d'exécution indépendant de la machine utilisée.
+
+Le fonctionnement général est le suivant :
+
+```text
+Fichiers HTML/CSS
+       │
+       ▼
+    web_data
+       │
+       ▼
+Conteneur Docker
+       │
+       ▼
+Serveur web
+       │
+       ▼
+http://localhost
+```
+
 ## Prérequis
 
 Avant de commencer, assurez-vous que **Docker** est installé et démarré sur votre machine.
@@ -16,7 +50,7 @@ cd <votre_chemin>
 
 ### 2. Démarrer les conteneurs Docker
 
-Lancez les conteneurs en arrière-plan avec la commande suivante :
+Lancez les conteneurs en arrière-plan à l'aide de la commande suivante :
 
 ```bash
 docker compose up -d
@@ -38,4 +72,4 @@ http://localhost
 
 Si l'installation s'est déroulée correctement, le site web devrait s'afficher.
 
-> **Remarque :** les commandes ci-dessus sont prévues pour une utilisation depuis **Windows CMD**.
+> **Remarque :** les commandes ci-dessus sont prévues pour être exécutées depuis **Windows CMD**.
