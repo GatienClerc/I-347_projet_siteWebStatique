@@ -1,4 +1,9 @@
 # I-347_projet_siteWebStatique
+## Objectif
+Site web statique avec Nginx
+- Conteneuriser un petit site HTML/CSS.
+- Exposer le port 80.
+- Ajouter un volume pour modifier le contenu en direct.
 
 ## Conception
 
@@ -10,6 +15,20 @@ root
 │   ├── index.html          # Structure et contenu de la page web
 │   └── style.css           # Mise en forme et présentation du site
 └── docker-compose.yml      # Configuration des services Docker
+```
+#### docker-compose.yml
+```yml
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - web_data:/usr/share/nginx/html
+
+volumes:
+  web_data:
+    name: web_data
 ```
 
 ### Fonctionnement
