@@ -1,106 +1,6 @@
-# I-347 Projet : Site Web Statique
-
-## Objectif
-
-Déployer un site web statique avec Nginx dans un conteneur Docker.
-
-- Conteneuriser un site HTML/CSS.
-- Exposer le port 80.
-- Utiliser un volume Docker pour stocker le contenu du site.
-
-## Conception
-
-### Architecture du projet
-
-```text
-root
-├── web/
-│   ├── index.html          # Structure et contenu de la page web
-│   └── style.css           # Mise en forme du site
-└── docker-compose.yml      # Configuration Docker Compose
-```
-
-### docker-compose.yml
-
-```yml
-services:
-  web:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - web_data:/usr/share/nginx/html
-
-volumes:
-  web_data:
-    name: web_data
-```
-
-## Fonctionnement
-
-Le site est déployé dans un environnement Docker afin de garantir un environnement d'exécution indépendant de la machine hôte.
-
-Le fonctionnement est le suivant :
-
-```text
-Fichiers HTML/CSS
-       │
-       ▼
-    web_data
-       │
-       ▼
-Conteneur Docker
-       │
-       ▼
-Serveur Nginx
-       │
-       ▼
-http://localhost
-```
-
-## Prérequis
-
-Avant de commencer, assurez-vous que **Docker** est installé et en cours d'exécution sur votre machine.
-
-## Installation
-
-### 1. Se placer à la racine du projet
-
-Ouvrez un terminal **CMD** et placez-vous dans le répertoire racine du projet :
-
-```bash
-cd <votre_chemin>
-```
-
-### 2. Démarrer les conteneurs Docker
-
-Lancez les conteneurs en arrière-plan :
-
-```bash
-docker compose up -d
-```
-
-### 3. Copier les fichiers du site dans le volume Docker
-
-Copiez les fichiers du dossier `web` vers le volume Docker `web_data` :
-
-```bash
-docker run --rm -v web_data:/destination -v "%cd%\web:/source:ro" alpine sh -c "cp -a /source/. /destination/"
-```
-
-### 4. Vérifier le fonctionnement du site
-
-Ouvrez votre navigateur et accédez à l'adresse suivante :
-
-```text
-http://localhost
-```
-
-Si l'installation s'est déroulée correctement, le site web devrait s'afficher.
-
-> **Remarque :** Les commandes ci-dessus sont prévues pour être exécutées depuis **Windows CMD**.# I-347_projet_siteWebStatique
-## Objectif
-Site web statique avec Nginx
+# I-347_projet_siteWebStatique
+## Objectifs
+Créer un site web statique avec Nginx afin de :
 - Conteneuriser un petit site HTML/CSS.
 - Exposer le port 80.
 - Ajouter un volume pour modifier le contenu en direct.
@@ -167,9 +67,9 @@ Ouvrez un terminal **CMD** et placez-vous dans le répertoire racine du projet :
 cd <votre_chemin>
 ```
 
-### 2. Démarrer les conteneurs Docker
+### 2. Démarrer le conteneurs Docker
 
-Lancez les conteneurs en arrière-plan à l'aide de la commande suivante :
+Lancez  conteneurs en arrière-plan à l'aide de la commande suivante :
 
 ```bash
 docker compose up -d
